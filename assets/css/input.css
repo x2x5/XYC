@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    color-scheme: light dark;
+  }
+
+  body {
+    @apply bg-zinc-50 text-zinc-950 antialiased dark:bg-zinc-950 dark:text-zinc-50;
+  }
+
+  a {
+    @apply underline decoration-zinc-400 underline-offset-4 transition hover:decoration-zinc-900 dark:decoration-zinc-600 dark:hover:decoration-zinc-100;
+  }
+}
