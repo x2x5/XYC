@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>让 AI 写成 Markdown 文件，回答会变长吗？ - 想一出是一出</title>
+  <meta name="description" content="一个关于 AI 网页、文件生成、输出长度和智能体感的实验。">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+</head>
+<body>
+  <main class="mx-auto max-w-3xl px-6 py-12 sm:py-16">
+    <nav class="mb-10 flex flex-wrap gap-2 text-sm text-zinc-500 dark:text-zinc-400">
+      <a href="../../index.html">首页</a>
+      <span>/</span>
+      <span>Markdown 文件输出实验</span>
+    </nav>
+
+    <article>
+      <header class="mb-10">
+        <p class="text-sm text-zinc-500 dark:text-zinc-400">实验中 / 2026-05-24</p>
+        <h1 class="mt-3 text-4xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">让 AI 写成 Markdown 文件，回答会变长吗？</h1>
+        <p class="mt-5 text-lg leading-8 text-zinc-600 dark:text-zinc-400">一个关于 AI 网页、文件生成、输出长度和"智能体感"的实验。</p>
+      </header>
+
+      <div class="space-y-8 text-base leading-8 text-zinc-800 dark:text-zinc-200">
+
+        <section>
+          <h2 class="text-2xl font-semibold text-zinc-950 dark:text-zinc-50">这个想法从哪里来</h2>
+          <p class="mt-4">我最开始的直觉很简单：当我让 AI 把答案写成一个可下载的 Markdown 文件，而不是直接在聊天框里输出时，它好像突然认真了很多，写得也长了很多。但这个直觉可能是错的，也可能只在某些产品里成立。所以这个页面不是结论，而是一组实验的起点。</p>
+          <p class="mt-4">我观察到，在某些 AI 网页产品中，直接让 AI 在聊天窗口回答时，回答可能相对短；但如果要求它生成一个文件，输出可能突然变得非常长——数千字、结构完整、像报告一样的内容。这个现象可能说明：</p>
+          <ul class="mt-4 list-inside list-disc space-y-2 pl-4">
+            <li>网页聊天回答和文件生成回答不是同一种产品路径；</li>
+            <li>同一个模型在不同 UI / 工具中可能表现不同；</li>
+            <li>"让 AI 生成文件"可能会触发一种更偏向"文档生产"的模式。</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-zinc-950 dark:text-zinc-50">核心假设</h2>
+          <div class="mt-4 space-y-4">
+            <div class="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900">
+              <p class="font-medium text-zinc-950 dark:text-zinc-50">H1：文件化输出增长假设</p>
+              <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">对同一个任务、同一个 AI 网站、同一个模型，要求"把最终输出写成一个可下载的 Markdown 文件"时，输出长度可能显著高于普通聊天回答。显著 = 字符数 ≥ 1.5 倍，或结构明显更完整。</p>
+            </div>
+            <div class="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900">
+              <p class="font-medium text-zinc-950 dark:text-zinc-50">H2：质量结构假设</p>
+              <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">文件化输出不只可能更长，也可能更像正式文档：标题、目录、章节、表格、步骤、结论等会更完整。但需单独评估，不能直接用字数替代质量。</p>
+            </div>
+            <div class="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900">
+              <p class="font-medium text-zinc-950 dark:text-zinc-50">H3：智能体能力信号假设</p>
+              <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">如果一个 AI 网页可以生成可下载文件、编辑文件、生成多文件结构，那么它可能接入了工具执行、文档生成或智能体式能力。这是一个外部行为判断。</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-zinc-950 dark:text-zinc-50">实验设计</h2>
+          <p class="mt-4">对多个 AI 网站进行同题测试，比较 5 种提示方式的输出差异：</p>
+          <ul class="mt-4 list-inside list-disc space-y-2 pl-4">
+            <li><strong>A 组：</strong>普通聊天回答（基线）</li>
+            <li><strong>B 组：</strong>Markdown 格式回答（测试格式本身的作用）</li>
+            <li><strong>C 组：</strong>要求生成 Markdown 文件</li>
+            <li><strong>D 组：</strong>要求可下载 Markdown 文件（强调下载）</li>
+            <li><strong>E 组：</strong>文档工作区 / Artifact / Canvas（如产品支持）</li>
+          </ul>
+          <p class="mt-4">每个条件至少重复 3 次。同一网站使用同一模型。保留原始输出。记录是否真的生成文件。单独评估字数和质量。</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-zinc-950 dark:text-zinc-50">当前结论</h2>
+          <p class="mt-4">准备实验中，暂无数据。</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-zinc-950 dark:text-zinc-50">已测试 AI 网站</h2>
+          <p class="mt-4">暂无。</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-zinc-950 dark:text-zinc-50">结果汇总表</h2>
+          <div class="mt-4 overflow-x-auto">
+            <table class="w-full border-collapse text-sm">
+              <thead>
+                <tr class="border-b border-zinc-300 dark:border-zinc-700">
+                  <th class="py-2 pr-4 text-left font-medium text-zinc-950 dark:text-zinc-50">AI 网站</th>
+                  <th class="py-2 pr-4 text-right font-medium text-zinc-950 dark:text-zinc-50">普通回答</th>
+                  <th class="py-2 pr-4 text-right font-medium text-zinc-950 dark:text-zinc-50">Markdown 格式</th>
+                  <th class="py-2 pr-4 text-right font-medium text-zinc-950 dark:text-zinc-50">文件输出</th>
+                  <th class="py-2 pr-4 text-right font-medium text-zinc-950 dark:text-zinc-50">增长倍率</th>
+                  <th class="py-2 pr-4 text-center font-medium text-zinc-950 dark:text-zinc-50">是否真文件</th>
+                  <th class="py-2 text-left font-medium text-zinc-950 dark:text-zinc-50">质量变化</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-zinc-200 dark:border-zinc-800">
+                  <td class="py-3 pr-4 text-zinc-600 dark:text-zinc-400">ChatGPT</td>
+                  <td class="py-3 pr-4 text-right text-zinc-600 dark:text-zinc-400">待填</td>
+                  <td class="py-3 pr-4 text-right text-zinc-600 dark:text-zinc-400">待填</td>
+                  <td class="py-3 pr-4 text-right text-zinc-600 dark:text-zinc-400">待填</td>
+                  <td class="py-3 pr-4 text-right text-zinc-600 dark:text-zinc-400">待填</td>
+                  <td class="py-3 pr-4 text-center text-zinc-600 dark:text-zinc-400">—</td>
+                  <td class="py-3 text-zinc-600 dark:text-zinc-400">待填</td>
+                </tr>
+                <tr class="border-b border-zinc-200 dark:border-zinc-800">
+                  <td class="py-3 pr-4 text-zinc-600 dark:text-zinc-400">Claude</td>
+                  <td class="py-3 pr-4 text-right text-zinc-600 dark:text-zinc-400">待填</td>
+                  <td class="py-3 pr-4 text-right text-zinc-600 dark:text-zinc-400">待填</td>
+                  <td class="py-3 pr-4 text-right text-zinc-600 dark:text-zinc-400">待填</td>
+                  <td class="py-3 pr-4 text-right text-zinc-600 dark:text-zinc-400">待填</td>
+                  <td class="py-3 pr-4 text-center text-zinc-600 dark:text-zinc-400">—</td>
+                  <td class="py-3 text-zinc-600 dark:text-zinc-400">待填</td>
+                </tr>
+                <tr class="border-b border-zinc-200 dark:border-zinc-800">
+                  <td class="py-3 pr-4 text-zinc-600 dark:text-zinc-400">Gemini</td>
+                  <td class="py-3 pr-4 text-right text-zinc-600 dark:text-zinc-400">待填</td>
+                  <td class="py-3 pr-4 text-right text-zinc-600 dark:text-zinc-400">待填</td>
+                  <td class="py-3 pr-4 text-right text-zinc-600 dark:text-zinc-400">待填</td>
+                  <td class="py-3 pr-4 text-right text-zinc-600 dark:text-zinc-400">待填</td>
+                  <td class="py-3 pr-4 text-center text-zinc-600 dark:text-zinc-400">—</td>
+                  <td class="py-3 text-zinc-600 dark:text-zinc-400">待填</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-zinc-950 dark:text-zinc-50">实验记录</h2>
+          <ul class="mt-4 list-inside list-disc space-y-2 pl-4">
+            <li><a href="./experiments/">实验记录目录</a>（暂无记录）</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-zinc-950 dark:text-zinc-50">质量评分规则</h2>
+          <p class="mt-4">每次输出按 7 个维度评分（每项 1-5 分，最高 35 分）：</p>
+          <ul class="mt-4 list-inside list-disc space-y-2 pl-4">
+            <li>完整性 — 是否覆盖问题的主要方面？</li>
+            <li>结构性 — 是否有清晰层级、章节、总结？</li>
+            <li>具体性 — 是否有具体例子、步骤、判断标准？</li>
+            <li>准确性 — 是否有明显错误或胡编？</li>
+            <li>可执行性 — 是否能拿去直接用？</li>
+            <li>克制性 — 是否承认不确定性和边界？</li>
+            <li>信息密度 — 是否不是单纯堆字数？</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-zinc-950 dark:text-zinc-50">反例与失败记录</h2>
+          <p class="mt-4">暂无。随着实验进行，此处将记录不支持文件生成的网站、生成文件但不变长的例子、变长但质量下降的例子。</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-zinc-950 dark:text-zinc-50">下一步</h2>
+          <ol class="mt-4 list-inside list-decimal space-y-2 pl-4">
+            <li>先测试 ChatGPT、Claude、Gemini 三个网站</li>
+            <li>每个网站完成 A/B/C 三组测试</li>
+            <li>记录原始输出到 <code>raw/</code> 目录</li>
+            <li>创建独立实验记录页面</li>
+            <li>填写结果汇总表</li>
+            <li>寻找反例</li>
+            <li>根据数据更新假设</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-zinc-950 dark:text-zinc-50">相关想法</h2>
+          <ul class="mt-4 list-inside list-disc space-y-2 pl-4">
+            <li><a href="../../thoughts/ai-output-quality/">让 AI 生成文件，回答质量会更高吗？</a> — 前一个相关想法</li>
+          </ul>
+        </section>
+
+      </div>
+    </article>
+
+    <footer class="mt-16 border-t border-zinc-200 pt-8 text-sm text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">
+      <p><a href="../../index.html">← 回到首页</a></p>
+    </footer>
+  </main>
+</body>
+</html>
